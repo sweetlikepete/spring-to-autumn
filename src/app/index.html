@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=0, viewport-fit=cover">
+
+        <title>
+            {{ metadata.title }}
+        </title>
+
+        <meta name="description" content="{{ metadata.description }}">
+        <meta name="title" content="{{ metadata.title }}">
+
+        <base href="/">
+
+        <link rel="canonical" href="https://{{ host }}{{ req.path }}">
+
+        <link rel="shortcut icon" sizes="32x32" href="/images/favicon.png">
+
+        <link rel="manifest" href="/manifest.json">
+
+        <meta name="theme-color" content="{{ colors.theme }}">
+
+        <link rel="apple-touch-icon" href="/images/app-icons/48x48.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/images/app-icons/72x72.png">
+        <link rel="apple-touch-icon" sizes="96x96" href="/images/app-icons/96x96.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/images/app-icons/144x144.png">
+        <link rel="apple-touch-icon" sizes="192x192" href="/images/app-icons/192x192.png">
+
+        <meta name="msapplication-TileImage" content="/images/app-icons/144x144.png">
+        <meta name="msapplication-TileColor" content="{{ colors.theme }}">
+        <meta name="msapplication-tap-highlight" content="no">
+
+        <meta name="referrer" content="always">
+
+        <meta itemprop="name" content="{{ metadata.title }}">
+        <meta itemprop="description" content="{{ metadata.description }}">
+        <meta itemprop="image" content="{{ metadata.image }}">
+
+        <meta property="og:title" content="{{ metadata.title }}">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://{{ host }}/">
+        <meta property="og:image" content="{{ metadata.image }}">
+        <meta property="og:description" content="{{ metadata.description }}">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="{{ metadata.twitter.user }}">
+        <meta name="twitter:title" content="{{ metadata.title }}">
+        <meta name="twitter:description" content="{{ metadata.description }}">
+        <meta name="twitter:image" content="{{ metadata.image }}">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="{{ assets.main.js }}"></script>
+
+        <style type="text/css">
+
+            @font-face {
+
+                font-family: "Sniglet Regular";
+                src: url("/fonts/Sniglet-Regular.ttf") format("truetype");
+
+            }
+
+            @font-face {
+
+                font-family: "Sniglet ExtraBold";
+                src: url("/fonts/Sniglet-ExtraBold.ttf") format("truetype");
+
+            }
+
+        </style>
+
+        <link rel="stylesheet" href="{{ assets.main.css }}">
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <nav class="{% block navClass %}compact{% endblock %}">
+
+                <ul>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#themes">Themes</a>
+                    </li>
+                    <li>
+                        <a href="#episodes">Episodes</a>
+                    </li>
+                </ul>
+
+                <a href="/">Home</a>
+
+                <ul>
+                    <li>
+                    <a href="#showtimes">Showtimes</a>
+                    </li>
+                    <li>
+                        <a href="#community">Community</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <main>
+
+                {% block main %}{% endblock %}
+
+            </main>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,70 @@
+
+{% extends "index.html" %}
+
+{% block navClass %}full{% endblock %}
+
+{% block main %}
+
+    <div class="page--index">
+
+        <div class="about">
+
+            <div class="copy">
+
+                <h1>What is it?</h1>
+
+                <p>
+                    Lorem ipsum dolor amet four dollar toast meditation adaptogen
+                    biodiesel lo-fi. Before they sold out woke fixie tbh pinterest
+                    VHS wayfarers kickstarter. Franzen hot chicken dreamcatcher
+                    marfa roof party gentrify, tattooed meditation.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="themes">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-7">
+
+                        <h2>Themes</h2>
+
+                        <p>
+                            Lorem ipsum dolor amet four dollar toast meditation adaptogen
+                            biodiesel lo-fi. Before they sold out woke fixie tbh pinterest
+                            VHS wayfarers kickstarter. Franzen hot chicken dreamcatcher
+                            marfa roof party gentrify, tattooed meditation.
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-5">
+
+                        <div class="search">
+                            <input type="text" placeholder="Search themes">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <ul>
+                {% for theme in themes %}
+                    <li>
+                        <a href="">{{ theme.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    </div>
+
+{% endblock %}

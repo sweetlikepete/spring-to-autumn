@@ -1,0 +1,14 @@
+{
+  "extends": "@sweetlikepete",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules" : {
+    "global-require": "off",
+    "import/unambiguous": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "import/dynamic-import-chunkname": "off",
+    "max-lines-per-function": 100
+  }
+}

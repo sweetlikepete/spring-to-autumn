@@ -1,0 +1,84 @@
+
+
+div.page--index{
+
+    .about{
+
+        background: #f00 url("/pages/index/images/head.jpg") bottom right no-repeat;
+        background-size: cover;
+        height: 430px;
+        position: relative;
+
+        .copy{
+
+            top: 225px;
+            position: absolute;
+            right: 30px;
+            max-width: 305px;
+
+            h1{
+
+                color:#fff;
+                margin:0;
+                padding:0;
+                line-height:1em;
+
+            }
+
+            p{
+
+                color:#0f2438;
+
+            }
+
+        }
+
+    }
+
+    .themes{
+
+        background: #114234;
+        padding:15px 25px;
+        color: #fff;
+
+        ul{
+
+            list-style: none;
+            margin: 0;
+            padding: 15px 0 0 0;
+            text-align: center;
+
+            li{
+
+                display: inline-block;
+
+            }
+
+            a{
+
+                display: block;
+                background: #fff;
+                color: #0f2438;
+                padding: 10px;
+                border-radius: 50px;
+                width: 200px;
+                font-size: 20px;
+                line-height: 1em;
+                margin: 5px;
+                text-align: center;
+                transition: transform .15s ease-in;
+
+                &:hover{
+
+                    text-decoration: none;
+                    transform: translateY(-3px);
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
