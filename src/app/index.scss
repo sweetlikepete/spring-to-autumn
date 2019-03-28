@@ -70,6 +70,12 @@ body{
     position: relative;
     text-rendering: optimizeLegibility;
 
+    &.pinked{
+
+        background: #e6baba;
+
+    }
+
     *::selection{
 
         background: $highlight-background;
@@ -281,8 +287,15 @@ nav{
     left:0;
     width:100%;
 
+    body.pinked &{
+
+        background: #e6baba;
+
+    }
+
     @include media-breakpoint-down(xs) {
 
+        padding: 10px;
         position: static;
 
     }
@@ -292,7 +305,13 @@ nav{
         align-items: center;
         display: flex;
         justify-content: center;
-        background:#fff;
+        background:transparent;
+
+        @include media-breakpoint-up(sm) {
+
+            background:#fff;
+
+        }
 
     }
 
@@ -348,15 +367,26 @@ nav{
         background-size: contain;
         display: block;
         font-size: 0;
-        position: absolute;
-        top: 100px;
         width: 400px;
         height: 190px;
-        transition:
-            top $nav-transition,
-            width $nav-transition,
-            height $nav-transition
-        ;
+
+        body.loaded &{
+
+            transition:
+                top $nav-transition,
+                width $nav-transition,
+                height $nav-transition
+            ;
+
+        }
+
+        @include media-breakpoint-up(sm) {
+
+            top: 15px;
+            position: absolute;
+            top: 100px;
+
+        }
 
         @include media-breakpoint-down(xs) {
 
@@ -375,10 +405,15 @@ nav{
         margin: 0;
         padding: 5px 0;
         width: 100%;
-        transition:
-            margin-left $nav-transition,
-            margin-right $nav-transition
-        ;
+
+        body.loaded &{
+
+            transition:
+                margin-left $nav-transition,
+                margin-right $nav-transition
+            ;
+
+        }
 
         @include media-breakpoint-down(xs) {
 
@@ -403,8 +438,8 @@ nav{
 
         &.selected{
 
-            font-family: "Sniglet ExtraBold";
             color: #f9b80d;
+            font-family: "Sniglet ExtraBold";
 
         }
 
@@ -412,4 +447,18 @@ nav{
 
 }
 
+
+div.page{
+
+    @include media-breakpoint-up(sm) {
+
+        padding-top: 90px;
+
+    }
+
+}
+
+
 @import "pages/index/index.scss";
+@import "pages/episode/index.scss";
+@import "pages/theme/index.scss";

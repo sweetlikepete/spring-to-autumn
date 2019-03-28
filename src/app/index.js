@@ -259,4 +259,6 @@ $(() => {
 
     initializeEpisodesScroll();
 
+    $("body").addClass("loaded");
+
 });

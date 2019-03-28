@@ -12,27 +12,27 @@ div.page--index{
 
     .about{
 
-        background: url("/pages/index/images/head.jpg") bottom right no-repeat;
+        background: url("/pages/index/images/head.jpg") bottom left no-repeat;
         background-size: contain;
-        height: 510px;
+        height: 420px;
         position: relative;
 
         @include media-breakpoint-down(xs) {
 
-            height: 500px;
+            height: 340px;
 
         }
 
         .copy{
 
-            top: 315px;
+            top: 225px;
             position: absolute;
             right: 30px;
             max-width: 305px;
 
             @include media-breakpoint-down(xs) {
 
-                top: 200px;
+                top: 15px;
 
             }
 
@@ -215,8 +215,8 @@ div.page--index{
 
                 transform: scale(1.05);
 
-                span.image:before,
-                span.image:after{
+                a.image:before,
+                a.image:after{
 
                     opacity:1;
 
@@ -230,7 +230,7 @@ div.page--index{
                 line-height:1em;
             }
 
-            span.image{
+            a.image{
 
                 width: 180px;
                 height: 100px;

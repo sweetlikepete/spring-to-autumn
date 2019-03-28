@@ -57,31 +57,40 @@ export default {
     shortName: "Spring to Autumn",
     themes: [
         {
-            name: "Theme 1"
+            name: "Theme 1",
+            id: "theme-1"
         },
         {
-            name: "Theme 2"
+            name: "Theme 2",
+            id: "theme-2"
         },
         {
-            name: "Theme 3"
+            name: "Theme 3",
+            id: "theme-3"
         },
         {
-            name: "Theme 4"
+            name: "Theme 4",
+            id: "theme-4"
         },
         {
-            name: "Theme 5"
+            name: "Theme 5",
+            id: "theme-5"
         },
         {
-            name: "Theme 6"
+            name: "Theme 6",
+            id: "theme-6"
         },
         {
-            name: "Theme 7"
+            name: "Theme 7",
+            id: "theme-7"
         },
         {
-            name: "Theme 8"
+            name: "Theme 8",
+            id: "theme-8"
         },
         {
-            name: "Theme 9"
+            name: "Theme 9",
+            id: "theme-9"
         }
     ],
     twitter: {

@@ -65,6 +65,36 @@ const pageRouter = function(){
 
     });
 
+    router.get("/themes/:themeId/", async (req, res) => {
+
+        const [theme] = defaultData.themes.filter((th) => th.id === req.params.themeId);
+
+        const page = await getPage("theme", req, res, { theme });
+
+        const success = 200;
+
+        res
+        .status(success)
+        .send(page)
+        .end();
+
+    });
+
+    router.get("/episodes/:episodeId/", async (req, res) => {
+
+        const [episode] = defaultData.episodes.filter((ep) => ep.id === req.params.episodeId);
+
+        const page = await getPage("episode", req, res, { episode });
+
+        const success = 200;
+
+        res
+        .status(success)
+        .send(page)
+        .end();
+
+    });
+
     return router;
 
 };

@@ -5,7 +5,7 @@
 
 {% block main %}
 
-    <div class="page--index">
+    <div class="page page--index">
 
         <div class="about">
 
@@ -62,7 +62,7 @@
             <ul>
                 {% for theme in themes %}
                     <li>
-                        <a href="">{{ theme.name }}</a>
+                        <a href="/themes/{{ theme.id }}/">{{ theme.name }}</a>
                     </li>
                 {% endfor %}
             </ul>
@@ -101,7 +101,7 @@
                     {% for episode in episodes %}
 
                         <div class="episode">
-                            <span class="image" style="background-image:url('/images/episodes/{{ episode.id }}.jpg');"></span>
+                            <a href="/episodes/{{ episode.id }}/" class="image" style="background-image:url('/images/episodes/{{ episode.id }}.jpg');"></a>
                             <h3>{{ episode.name }}</h3>
                             <p>{{ episode.description }}</p>
                             <a href="/episodes/{{ episode.id }}/">Read more</a>
