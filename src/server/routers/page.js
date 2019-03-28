@@ -67,7 +67,23 @@ const pageRouter = function(){
 
     router.get("/themes/:themeId/", async (req, res) => {
 
-        const [theme] = defaultData.themes.filter((th) => th.id === req.params.themeId);
+        const themes = defaultData.themes.slice(0);
+        const [theme] = themes.filter((th) => th.id === req.params.themeId);
+        const episodes = defaultData.episodes.slice(0);
+
+        theme.episodes = theme.episodes.map((episodeId) => {
+
+            if(typeof episodeId === "string"){
+
+                const [episode] = episodes.filter((ep) => ep.id === episodeId);
+
+                return episode;
+
+            }
+
+            return episodeId;
+
+        });
 
         const page = await getPage("theme", req, res, { theme });
 
@@ -82,7 +98,23 @@ const pageRouter = function(){
 
     router.get("/episodes/:episodeId/", async (req, res) => {
 
-        const [episode] = defaultData.episodes.filter((ep) => ep.id === req.params.episodeId);
+        const episodes = defaultData.episodes.slice(0);
+        const [episode] = episodes.filter((ep) => ep.id === req.params.episodeId);
+        const themes = defaultData.themes.slice(0);
+
+        episode.themes = episode.themes.map((themeId) => {
+
+            if(typeof themeId === "string"){
+
+                const [theme] = themes.filter((th) => th.id === themeId);
+
+                return theme;
+
+            }
+
+            return themeId;
+
+        });
 
         const page = await getPage("episode", req, res, { episode });
 

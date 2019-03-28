@@ -9,7 +9,29 @@
 
             <div class="content">
 
-                theme {{ theme.name }}
+                <h1>{{ theme.name }}</h1>
+
+                {% include "themes/" + theme.id + ".html" %}
+
+                {% if theme.episodes %}
+
+                    <div class="episodes">
+
+                        <h2>Episodes containing this theme</h2>
+
+                        {% for episode in theme.episodes %}
+
+                            <div class="episode">
+                                <a href="/episodes/{{ episode.id }}/" class="image" style="background-image:url('/images/episodes/{{ episode.id }}.jpg');"></a>
+                                <h3>{{ episode.name }}</h3>
+                                <a class="goto" href="/episodes/{{ episode.id }}/">Go to episode</a>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
 
             </div>
 

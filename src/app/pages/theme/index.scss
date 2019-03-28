@@ -14,8 +14,117 @@
     .content{
 
         background:#fff;
-        padding:50px;
+        padding:20px;
         min-height:300px;
+
+    }
+
+    .episodes h2{
+
+        font-size:17px;
+        border-bottom:1px solid #868e96;
+        line-height:1em;
+        margin:0;
+        padding:5px 0;
+
+    }
+
+    .episode{
+
+        display: inline-block;
+        width: 180px;
+        white-space:normal;
+        margin-right:10px;
+        vertical-align: top;
+        transition: transform .2s ease-in-out;
+        padding: 10px 0 10px 0;
+        text-align: center;
+
+        &:hover{
+
+            transform: scale(1.05);
+
+            a.image:before,
+            a.image:after{
+
+                opacity:1;
+
+            }
+
+        }
+
+        h3{
+            margin:0;
+            padding:10px 0 5px 0;
+            line-height:1em;
+            font-size:13px;
+            text-align: left;
+        }
+
+        a.image{
+
+            width: 180px;
+            height: 100px;
+            display: flex;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &:before{
+
+                content:"";
+                display:inline-block;
+                width:38px;
+                height:38px;
+                background: url("/images/play.png") center center no-repeat;
+                background-size:contain;
+
+            }
+
+            &:after{
+
+                content:"";
+                display:inline-block;
+                width:22px;
+                height:7px;
+                background: url("/images/elipsis.png") center center no-repeat;
+                background-size:contain;
+                position:absolute;
+                top:5px;
+                right:5px;
+
+            }
+
+            &:before,
+            &:after{
+
+                opacity:.5;
+                transition: opacity .2s ease-in-out;
+
+            }
+
+        }
+
+        a.goto{
+
+            background: #fed101;
+            color: #333;
+            display: inline-block;
+            padding:3px 15px;
+            border-radius: 50px;
+            font-size: 10px;
+
+            &:hover{
+
+                text-decoration: none;
+
+            }
+
+        }
 
     }
 

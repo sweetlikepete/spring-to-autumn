@@ -11,8 +11,33 @@
 
             <div class="content">
 
-                episode {{ episode.name }}
+                <h1>{{ episode.name }}</h1>
 
+                <iframe
+                    src="https://www.youtube.com/embed/{{ episode.video }}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                >
+                </iframe>
+
+                {% if episode.themes %}
+
+                    <div class="themes">
+
+                        <h2>Themes in this episode</h2>
+
+                        <ul>
+                            {% for theme in episode.themes %}
+                                <li>
+                                    <a href="/themes/{{ theme.id }}/">{{ theme.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+
+                {% endif %}
             </div>
 
         </div>
