@@ -9,6 +9,8 @@
 
         <div class="about">
 
+            <a id="about" class="anchor"></a>
+
             <div class="copy">
 
                 <h1>What is it?</h1>
@@ -25,6 +27,8 @@
         </div>
 
         <div class="themes">
+
+            <a id="themes" class="anchor"></a>
 
             <div class="container-fluid">
 
@@ -43,7 +47,7 @@
 
                     </div>
 
-                    <div class="col-md-5">
+                    <div class="col-md-5 search-wrap">
 
                         <div class="search">
                             <input type="text" placeholder="Search themes">
@@ -62,6 +66,192 @@
                     </li>
                 {% endfor %}
             </ul>
+
+        </div>
+
+        <div class="episodes">
+
+            <a id="episodes" class="anchor"></a>
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-8 copy">
+
+                        <h2>Episodes</h2>
+
+                        <p>
+                            Lorem ipsum dolor amet four dollar toast meditation adaptogen
+                            biodiesel lo-fi.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="episodes-wrap">
+
+                <div class="left"></div>
+
+                <div class="episodes-scroll">
+
+                    {% for episode in episodes %}
+
+                        <div class="episode">
+                            <span class="image" style="background-image:url('/images/episodes/{{ episode.id }}.jpg');"></span>
+                            <h3>{{ episode.name }}</h3>
+                            <p>{{ episode.description }}</p>
+                            <a href="/episodes/{{ episode.id }}/">Read more</a>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="right"></div>
+
+            </div>
+
+        </div>
+
+        <div class="find-the-show">
+
+            <a id="showtimes" class="anchor"></a>
+
+            <h2>Find the show</h2>
+
+            <p>
+                Lorem ipsum dolor amet four dollar toast meditation adaptogen
+                biodiesel lo-fi. Before they sold out woke fixie tbh pinterest
+                VHS wayfarers kickstarter. Franzen hot chicken dreamcatcher
+                marfa roof party gentrify, tattooed meditation.
+            </p>
+
+        </div>
+
+        <div class="show-times">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <img src="/images/logos/mindset.png">
+
+                        <div>
+
+                            <h2>Monday - Friday</h2>
+
+                            <h3>8:00</h3>
+
+                            <p>DStv ch319 / StarSat ch309 / OVHD ch134</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <img src="/images/logos/other.png">
+
+                        <div>
+
+                            <h2>Monday - Friday</h2>
+
+                            <h3>8:00</h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="contact-us">
+
+            <a id="contact" class="anchor"></a>
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-5">
+
+                    </div>
+
+                    <div class="col-md-7">
+
+                        <h2>Contact us</h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-5">
+
+                        <table>
+                            <tr>
+                                <td>
+                                    Call us:
+                                </td>
+                                <td>
+                                    +27 12 345 6789
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Mail us:
+                                </td>
+                                <td>
+                                    info@spring2autumn.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Follow us:
+                                </td>
+                                <td>
+                                    <a href="">
+                                        <img src="/pages/index/images/facebook.png">
+                                    </a>
+                                    <a href="">
+                                        <img src="/pages/index/images/instagram.png">
+                                    </a>
+                                    <a href="">
+                                        <img src="/pages/index/images/twitter.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div class="col-md-7">
+
+                        <p>Join our mailing list to recieve monthly Newsletters</p>
+
+                        <input type="text" placeholder="Enter your e-mail adress">
+
+                        <button>Sign up</button>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 

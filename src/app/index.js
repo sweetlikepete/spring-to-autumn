@@ -68,6 +68,8 @@ const initializeScrollDirectionEvents = function(){
 
     let onScroll = function(){
 
+        updateNavSelection();
+
         clear();
 
         st = getScrollTop();
@@ -126,6 +128,31 @@ const initializeScrollDirectionEvents = function(){
 
 };
 
+const updateNavSelection = function(){
+
+    let sel = $("a.anchor:eq(0)").attr("id");
+
+    if(window.location.hash){
+
+        sel = window.location.hash.replace(/\#/g, "");
+
+    }else{
+
+        $("a.anchor").each((index, el) => {
+
+            if($(window).scrollTop() >= $(el).offset().top){
+                sel = $(el).attr("id");
+            }
+
+        });
+
+    }
+
+    $("nav a").removeClass("selected");
+    $(`nav a[href='#${ sel }']`).addClass("selected");
+
+};
+
 const initializeThemeSearch = function(){
 
     const change = () => {
@@ -171,29 +198,65 @@ const initializeThemeSearch = function(){
 
 };
 
-$(() => {
+const initializeEpisodesScroll = function(){
 
-    $("nav a").click((evt) => {
+    const scr = $(".episodes-scroll");
 
-        forceShowNav = true;
+    $(".episodes-wrap .right").click(() => {
 
-        const target = $(evt.currentTarget).attr("rel");
-        const top = $("#" + target).offset().top - 70;
+        const sl = Math.floor(scr.scrollLeft() + 50);
 
-        $("html, body").stop().animate({ scrollTop : top}, 500, "swing", () => {
+        $(".episodes-wrap .episode").each((index, el) => {
 
-            forceShowNav = false;
+            const lef = Math.floor($(el).position().left) + scr.scrollLeft();
+
+            if(lef > sl && scr.scrollLeft() !== lef - 50){
+
+                scr.stop().animate({ scrollLeft : lef - 50}, 300, "swing");
+
+                return false;
+
+            }
 
         });
 
-        evt.preventDefault();
+    });
 
-        return false;
+    $(".episodes-wrap .left").click(() => {
+
+        const sl = Math.floor(scr.scrollLeft() + 50);
+
+        let target = 0;
+
+        $(".episodes-wrap .episode").each((index, el) => {
+
+            const lef = Math.floor($(el).position().left);
+
+            if(lef < 0){
+                target = Math.floor($(el).position().left) + scr.scrollLeft() - 50;
+            }
+
+        });
+
+        console.log(target);
+
+        scr.stop().animate({ scrollLeft : target}, 300, "swing");
+
+    });
+};
+
+$(() => {
+
+    $("nav a").click(() => {
+
+        updateNavSelection();
 
     });
 
     initializeThemeSearch();
 
     initializeScrollDirectionEvents();
+
+    initializeEpisodesScroll();
 
 });
